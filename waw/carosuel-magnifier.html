@@ -1,0 +1,34 @@
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.css"
+/>
+<link
+  rel="stylesheet"
+  href="https://codefinity-content-media-v2.s3.eu-west-1.amazonaws.com/courses/c1087363-9025-4c37-8d5e-983a32a007e9/image-tools-section/image-carousel%2Bmagnifier.css"
+/>
+
+<div class="slider-container">
+  <div class="slider"></div>
+  <div class="slider-controls">
+    <button class="btn prev-btn" onclick="moveToPrevSlide()">&#8592;</button>
+    <button class="btn next-btn" onclick="moveToNextSlide()">&#8594;</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js"></script>
+<script>
+  // CHANGE THE IMAGE URLS AND DESCRIPTIONS (DESCRIPTION IS OPTIONAL)
+  const galleryItems = [
+    {
+      image:
+        'https://codefinity-content-media-v2.s3.eu-west-1.amazonaws.com/courses/383258e5-c318-41bc-b29c-0495ff30ccbe/pages-%26-layouts/dashboard-page-preview.png',
+      description: 'dashboard page preview',
+    },
+    {
+      image:
+        'https://codefinity-content-media-v2.s3.eu-west-1.amazonaws.com/courses/383258e5-c318-41bc-b29c-0495ff30ccbe/pages-%26-layouts/invocies-page-preview.png',
+      description: 'invoices page preview',
+    },
+  ];
+</script>
+<script src="https://codefinity-content-media-v2.s3.eu-west-1.amazonaws.com/courses/c1087363-9025-4c37-8d5e-983a32a007e9/image-tools-section/image-carousel%2Bmagnifier-v2.js"></script>
