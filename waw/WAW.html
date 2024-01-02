@@ -34,50 +34,27 @@
 
 <!-- FILE NAME -->
 <div class="file-header">
-  <div class="filename">app/ui/dashboard/nav-links.tsx</div>
+  <div class="filename">package.json</div>
 </div>
 
 <!-- ======== CODE ======== -->
 <div id="solution-block" class="block">
-  <textarea id="code-3" class="language-javascript" readonly>
-// ...
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import clsx from 'clsx';
-
-const links = [
+  <textarea id="code-1" class="language-javascript" readonly>
+{
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "prettier": "prettier --write --ignore-unknown .",
+    "prettier:check": "prettier --check --ignore-unknown .",
+    "seed": "node -r dotenv/config ./scripts/seed.js",
+    "start": "next start"
+  },
   // ...
-];
-
-export default function NavLinks() {
-  const pathname = usePathname();
-
-  return (
-    <>
-      {links.map((link) => {
-        const LinkIcon = link.icon;
-        return (
-          <Link
-            key={link.name}
-            href={link.href}
-            className={clsx(
-              'text-wh flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-neutral-900 p-3 text-sm font-medium text-white hover:bg-neutral-600 hover:text-white md:flex-none md:justify-start md:p-2 md:px-3',
-              {
-                'bg-neutral-600': pathname === link.href,
-              },
-            )}
-          >
-            <LinkIcon className="w-6" />
-            <p className="hidden md:block">{link.name}</p>
-          </Link>
-        );
-      })}
-    </>
-  );
 }
   </textarea>
 
-  <button class="copy-button" onclick="handleClick3('code-3')">
+  <button class="copy-button" onclick="handleClick1('code-1')">
     <svg
       width="20"
       height="20"
@@ -110,7 +87,7 @@ export default function NavLinks() {
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    var editor = CodeMirror.fromTextArea(document.getElementById('code-3'), {
+    var editor = CodeMirror.fromTextArea(document.getElementById('code-1'), {
       lineNumbers: true,
       mode: 'javascript',
       theme: 'dracula',
@@ -118,19 +95,14 @@ export default function NavLinks() {
 
     // -------> Highlight <-----------
     editor.markText(
-      { line: 3, ch: 0 },
-      { line: 3, ch: 100 },
-      { className: 'specific' },
-    );
-    editor.markText(
-      { line: 20, ch: 0 },
-      { line: 25, ch: 100 },
+      { line: 7, ch: 0 },
+      { line: 7, ch: 100 },
       { className: 'specific' },
     );
   });
 
   // Button handler
-  const handleClick3 = (codeBlock) => {
+  const handleClick1 = (codeBlock) => {
     const textarea = document.getElementById(codeBlock);
     const copiedText = textarea.value;
 
