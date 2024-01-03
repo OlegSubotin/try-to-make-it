@@ -34,24 +34,38 @@
 
 <!-- FILE NAME -->
 <div class="file-header">
-  <div class="filename">package.json</div>
+  <div class="filename">app/dashboard/page.tsx</div>
 </div>
 
 <!-- ======== CODE ======== -->
 <div id="solution-block" class="block">
   <textarea id="code-1" class="language-javascript" readonly>
-{
-  "private": true,
-  "scripts": {
-    "build": "next build",
-    "dev": "next dev",
-    "prettier": "prettier --write --ignore-unknown .",
-    "prettier:check": "prettier --check --ignore-unknown .",
-    "seed": "node -r dotenv/config ./scripts/seed.js",
-    "start": "next start"
-  },
-  // ...
+// ...
+import { poppins } from '@/app/ui/fonts';
+import { fetchIncome, fetchLatestInvoices } from '@/app/lib/data';
+
+export default async function Page() {
+  const income = await fetchIncome();
+  const latestInvoices = await fetchLatestInvoices();
+
+  return (
+    <main className="rounded-xl bg-neutral-900 p-6">
+      <h1
+        className={`${poppins.className} mb-4 text-center text-xl text-white md:text-3xl`}
+      >
+        Dashboard
+      </h1>
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {/* ... */}
+      </div>
+      <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
+        <IncomeChart income={income} />
+        <LatestInvoices latestInvoices={latestInvoices} />
+      </div>
+    </main>
+  );
 }
+
   </textarea>
 
   <button class="copy-button" onclick="handleClick1('code-1')">
@@ -95,8 +109,18 @@
 
     // -------> Highlight <-----------
     editor.markText(
-      { line: 7, ch: 0 },
-      { line: 7, ch: 100 },
+      { line: 2, ch: 22 },
+      { line: 2, ch: 41 },
+      { className: 'specific' },
+    );
+    editor.markText(
+      { line: 6, ch: 0 },
+      { line: 6, ch: 100 },
+      { className: 'specific' },
+    );
+    editor.markText(
+      { line: 20, ch: 8 },
+      { line: 20, ch: 100 },
       { className: 'specific' },
     );
   });
